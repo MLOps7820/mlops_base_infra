@@ -11,7 +11,7 @@ resource "aws_lambda_function" "lambda" {
   timeout                        = var.timeout
   runtime                        = var.runtime
   layers                         = var.layers
-  reserved_concurrent_executions = var.reserved_concurrent_executions
+  #reserved_concurrent_executions = var.reserved_concurrent_executions
   source_code_hash               = var.source_code_hash
   tracing_config {
     mode = "Active"
