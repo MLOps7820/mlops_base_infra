@@ -37,7 +37,7 @@ module "clone_repo_lambda" {
   runtime                        = "python3.11"
   source_code_hash               = data.archive_file.clone_repo_zip_code.output_base64sha256
   layers                         = [aws_lambda_layer_version.pygithub_lambda_layer.arn]
-  reserved_concurrent_executions = 5
+  reserved_concurrent_executions = 10
   variables = {
     GITACCESSTOKEN = "sagemaker/github_pat",
     REGION         = local.aws_region
@@ -57,7 +57,7 @@ module "trigger_workflow_lambda" {
   runtime                        = "python3.11"
   source_code_hash               = data.archive_file.trigger_workflow_zip_code.output_base64sha256
   layers                         = [aws_lambda_layer_version.pygithub_lambda_layer.arn]
-  reserved_concurrent_executions = 5
+  reserved_concurrent_executions = 10
   variables = {
     GITACCESSTOKEN = "sagemaker/github_pat",
     REGION         = local.aws_region
