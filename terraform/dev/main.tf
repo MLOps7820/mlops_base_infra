@@ -30,7 +30,7 @@ module "service_catalog_bucket" {
 # KMS
 module "kms" {
   source                              = "../modules/kms"
-  trusted_accounts_for_decrypt_access = "arn:aws:iam::111122223333:root"
+  trusted_accounts_for_decrypt_access = ["arn:aws:iam::111122223333:root"]
   account_id                          = local.account_id
 }
 
