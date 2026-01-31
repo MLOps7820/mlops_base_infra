@@ -41,7 +41,7 @@ jobs:
       - name: Terraform Destroy Dev
         run: | 
           make tf-destroy env=dev \
-          bucket=terraform-state-dev-${{ env.AWS_REGION }}-${{ env.AWS_DEV_ACCOUNT_NUMBER }} \
+          bucket=mlops-dev-${{ env.AWS_REGION }}-${{ env.AWS_DEV_ACCOUNT_NUMBER }} \
           region=${{ env.AWS_REGION }} \
           key=mlops-terraform-dev.state \
           table=${{ env.DYNAMODB_PREFIX }}-dev \
